@@ -18,35 +18,17 @@ export class Leads {
   updatedAt: Date;
 
   @Column()
-  createdLead: number;
+  createdPhone: Date;
 
-  @Column()
-  updatedLead: number;
-
-  @Column({ nullable: true })
-  closedLead: number;
-
-  @Column()
-  idLead: number;
-
-  @Column()
-  leadName: string;
-
-  @Column()
-  responsible_user: string;
-
-  @Column()
-  status_id: string;
-
-  @Column()
-  pipeline_id: string;
-
-  @Column()
-  price: number;
+  @Column({ type: 'bigint' })
+  phone: number;
 
   @Column({ nullable: true })
-  invoice: number;
+  mnp: number;
 
   @Column({ nullable: true })
-  bill: number;
+  agent: string;
+
+  @Column({ nullable: true })
+  ref: string;
 }

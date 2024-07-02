@@ -6,12 +6,6 @@ export class LeadsController {
   constructor(private leadsService: LeadsService) {}
   @All('/webhook')
   async getInfoLead(@Body() body) {
-    let leadId;
-    body.leads.status.map((a) => (leadId = a.id));
-    const leadData = await this.leadsService.getLeadInfo(
-      body.account.id,
-      leadId,
-    );
-    this.leadsService.createPayload(leadData);
+    this.leadsService.savePhoneInfo(body);
   }
 }
